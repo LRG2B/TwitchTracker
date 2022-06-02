@@ -7,7 +7,7 @@ require_once "db.php";
 
 
 //On récupère l'ID
-$id = $_GET["id"];
+$id = $_GET["id"]; 
 
 //On va chercher l'article dans la base
 $sql = 'SELECT * FROM `streamers-stats` WHERE `date` LIKE "%2022-05%" AND `streamer` = :id';
@@ -153,7 +153,65 @@ $titre = strip_tags(($streamerRecup["name"]));
                         <?php if(array_key_exists('2',$recupGraph)) {echo $recupGraph[2]['max_viewers']; } else { echo null;} ?>
                     ],
                     borderColor : ['blue'],
-                },      
+                }, 
+                {   
+                label : 'Le rang au fil des mois',
+                data : [
+                    <?php if(array_key_exists('0',$recupGraph)) {echo $recupGraph[0]['rank']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('1',$recupGraph)) {echo $recupGraph[1]['rank']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('2',$recupGraph)) {echo $recupGraph[2]['rank']; } else { echo null;} ?>
+                    ],
+                    borderColor : ['green'],
+                    
+                },  
+                {   
+                label : 'Les heures regardées au fil des mois',
+                data : [
+                    <?php if(array_key_exists('0',$recupGraph)) {echo $recupGraph[0]['hours_watched']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('1',$recupGraph)) {echo $recupGraph[1]['hours_watched']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('2',$recupGraph)) {echo $recupGraph[2]['hours_watched']; } else { echo null;} ?>
+                    ],
+                    borderColor : ['yellow'],
+                    
+                }, 
+                // 
+                {   
+                label : 'Les followers au fil des mois',
+                data : [
+                    <?php if(array_key_exists('0',$recupGraph)) {echo $recupGraph[0]['followers']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('1',$recupGraph)) {echo $recupGraph[1]['followers']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('2',$recupGraph)) {echo $recupGraph[2]['followers']; } else { echo null;} ?>
+                    ],
+                    borderColor : ['#921818'],
+                    
+                },  
+                {   
+                label : 'Le total des followers au fil des mois',
+                data : [
+                    <?php if(array_key_exists('0',$recupGraph)) {echo $recupGraph[0]['followers_total']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('1',$recupGraph)) {echo $recupGraph[1]['followers_total']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('2',$recupGraph)) {echo $recupGraph[2]['followers_total']; } else { echo null;} ?>
+                    ],
+                    borderColor : ['pink'],
+                }, 
+                {   
+                label : 'Le total de vues au fil des mois',
+                data : [
+                    <?php if(array_key_exists('0',$recupGraph)) {echo $recupGraph[0]['views']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('1',$recupGraph)) {echo $recupGraph[1]['views']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('2',$recupGraph)) {echo $recupGraph[2]['views']; } else { echo null;} ?>
+                    ],
+                    borderColor : ['#26A088'],
+                }, 
+                {   
+                label : 'Le total de vues au total au fil des mois',
+                data : [
+                    <?php if(array_key_exists('0',$recupGraph)) {echo $recupGraph[0]['views_total']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('1',$recupGraph)) {echo $recupGraph[1]['views_total']; } else { echo null;} ?>,
+                    <?php if(array_key_exists('2',$recupGraph)) {echo $recupGraph[2]['views_total']; } else { echo null;} ?>
+                    ],
+                    borderColor : ['#236C5D'],
+                }, 
             ]};
             const config = {
                 type: 'line',
@@ -161,7 +219,7 @@ $titre = strip_tags(($streamerRecup["name"]));
                 options : {
                     title : {
                             display : true,
-                            text : "Ne fonctionne pas ",
+                            text : "Ne fonctionne pas",
                     }
                 },
             };
