@@ -18,7 +18,7 @@
                 <tr> <td><a href="CompareAllStreamer.php?id=<?= 6 ?>"> Kameto </td> </tr>
                 <tr> <td><a href="CompareAllStreamer.php?id=<?= 5 ?>"> Mynthos </td> </tr>
                 <tr> <td><a href="CompareAllStreamer.php?id=<?= 4 ?>"> Ponce </td> </tr>
-                <tr> <td><a href="CompareAllStreamer.php?id=<?= 2 ?>"> Zerator </td> </tr>
+                <tr> <td><a href="CompareAllStreamer.php?id=<?= 2 ?>"> Zerator </td>  </tr>
             </article>
         </table>
     

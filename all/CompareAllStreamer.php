@@ -17,7 +17,7 @@
        $id = $_GET["id"];
 
 
-   //RANK
+   //RANK 
    $queryRank = $dbh->prepare('SELECT `name`,`rank` FROM `streamers`
    INNER JOIN `streamers-stats` ON `streamers`.id = `streamers-stats`.streamer
    WHERE date LIKE "%2022-05%"  AND `streamers`.id != :id

@@ -161,7 +161,7 @@ $titre = strip_tags(($streamerRecup["name"]));
                 options : {
                     title : {
                             display : true,
-                            text : "Ne fonctionne pas",
+                            text : "Ne fonctionne pas ",
                     }
                 },
             };

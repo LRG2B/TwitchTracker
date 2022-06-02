@@ -11,6 +11,5 @@ try {
     catch (PDOException $e) { // En cas d'erreur récupération
         print "Erreur !: " . $e->getMessage() . "<br!/"; //Définition du message d'erreur
         die(); // Arrêt du script
-       }
-
+       } 
 ?>

@@ -8,9 +8,6 @@ require_once "db.php";
    $tabstreamer = $query->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
-
-
-
 <!DOCTYPE HTML>
 <html>
     <head>
